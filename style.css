@@ -589,7 +589,16 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
   transition: all 0.5s;
 }
-
+.paper-accepted {
+  color: #15803d !important; /* strong green */
+  font-weight: 700; /* bold */
+  font-size: 16px;
+}
+.submission-badge {
+  color: #2563eb !important;   /* strong blue */
+  font-weight: 700;            /* bold */
+  font-size: 16px;             /* bigger text */
+}
 .role-badge {
   background-color: rgba(0, 229, 255, 0.1);
   color: var(--color-accent);
@@ -608,6 +617,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: auto;
   padding-top: 1.5rem;
 }
+
 
 .social-btn {
   width: 2.5rem;
