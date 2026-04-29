@@ -590,14 +590,22 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
 }
 .paper-accepted {
-  color: #15803d !important; /* strong green */
+  color: #179746 !important; /* strong green */
   font-weight: 700; /* bold */
   font-size: 16px;
+  /* Glow Effect */
+  text-shadow:
+    0 0 6px rgba(34, 197, 94, 0.45),
+    0 0 12px rgba(34, 197, 94, 0.25);
 }
 .submission-badge {
   color: #2563eb !important;   /* strong blue */
   font-weight: 700;            /* bold */
-  font-size: 16px;             /* bigger text */
+  font-size: 16px;     
+   /* Glow Effect */
+  text-shadow:
+    0 0 6px rgba(59, 130, 246, 0.45),
+    0 0 12px rgba(59, 130, 246, 0.25);        /* bigger text */
 }
 .role-badge {
   background-color: rgba(0, 229, 255, 0.1);
