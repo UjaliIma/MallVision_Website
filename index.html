@@ -66,7 +66,18 @@
     <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
     <div id="mobile-menu-drawer" class="mobile-menu-drawer">
         <div class="flex flex-col h-full">
-            
+            <!-- Drawer Header -->
+            <div class="flex justify-between items-center px-8 py-5 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-primary shadow-sm">
+                        <i data-lucide="eye" size="20"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary tracking-tight">Mall<span class="text-accent">Vision</span></span>
+                </div>
+                <button id="close-menu" class="text-slate-400 hover:text-primary transition-colors p-2 bg-transparent border-none cursor-pointer">
+                    <i data-lucide="x" size="24"></i>
+                </button>
+            </div>
             
             <!-- Navigation Links -->
             <nav class="flex flex-col py-8">
@@ -93,7 +104,26 @@
                 </a>
             </nav>
             
-            
+            <!-- Footer Area -->
+            <div class="mt-auto p-8 bg-slate-50/50 border-t border-slate-100">
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Research Portal</p>
+                        <div class="flex gap-4">
+                            <a href="mailto:researchmrus@gmail.com" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all">
+                                <i data-lucide="mail" size="18"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all">
+                                <i data-lucide="linkedin" size="18"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+                        <span class="text-slate-400 text-[10px] font-medium">© 2026 MallVision</span>
+                        <span class="text-slate-300 text-[10px] font-medium tracking-widest">V1.2.4</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -472,7 +502,7 @@
                 <div class="section-title-line mx-auto mt-8"></div>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-10 mt-20">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-10 mt-20">
                 <div class="tech-card">
                     <div class="tech-icon-container">
                         <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" style="width: 100%; height: 100%; object-fit: contain;">
