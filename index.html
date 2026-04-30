@@ -17,7 +17,7 @@
     <nav id="navbar" class="navbar not-scrolled">
         <div class="container flex items-center justify-between">
             <!-- Logo -->
-            <div class="flex items-center" style="min-width: 200px;">
+            <div class="flex items-center">
                 <a href="#" class="flex items-center gap-3" style="text-decoration: none;">
                     <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-primary shadow-lg shadow-accent/20">
                         <i data-lucide="eye" size="24"></i>
@@ -55,12 +55,47 @@
 
             <!-- Right side / Mobile toggle -->
             <div class="flex justify-end lg:w-1/4">
-                <button class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors bg-transparent border-none cursor-pointer">
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors bg-transparent border-none cursor-pointer">
                     <i data-lucide="menu" size="28"></i>
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <div id="mobile-menu-drawer" class="mobile-menu-drawer">
+        <div class="flex flex-col h-full">
+            
+            
+            <!-- Navigation Links -->
+            <nav class="flex flex-col py-8">
+                <a href="#" class="mobile-drawer-link active">
+                    <i data-lucide="home" size="18"></i> Home
+                </a>
+                <a href="#domain" class="mobile-drawer-link">
+                    <i data-lucide="globe" size="18"></i> Domain Research
+                </a>
+                <a href="#milestones" class="mobile-drawer-link">
+                    <i data-lucide="target" size="18"></i> Milestones
+                </a>
+                <a href="#documents" class="mobile-drawer-link">
+                    <i data-lucide="file-text" size="18"></i> Documents
+                </a>
+                <a href="#presentations" class="mobile-drawer-link">
+                    <i data-lucide="monitor" size="18"></i> Presentations
+                </a>
+                <a href="#about-us" class="mobile-drawer-link">
+                    <i data-lucide="users" size="18"></i> About Us
+                </a>
+                <a href="#contact" class="mobile-drawer-link">
+                    <i data-lucide="mail" size="18"></i> Contact Us
+                </a>
+            </nav>
+            
+            
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -1468,7 +1503,13 @@
 
 <script>
     // Initialize Lucide icons
-    lucide.createIcons();
+    const initIcons = () => {
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    };
+    
+    initIcons();
 
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
@@ -1482,33 +1523,64 @@
         }
     });
 
-    // Mobile menu toggle (simple version)
-    const mobileMenuBtn = document.querySelector('nav button');
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            // Logic for mobile menu would go here
-            console.log('Mobile menu clicked');
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-drawer-link');
+
+    if (mobileMenuBtn && mobileDrawer) {
+        const openMenu = () => {
+            mobileOverlay.classList.add('active');
+            mobileDrawer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            initIcons(); // Re-init icons to ensure they show in drawer
+        };
+
+        const closeMenu = () => {
+            mobileOverlay.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     }
 
     // Active link highlighting on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
 
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 150) {
+            if (window.pageYOffset >= sectionTop - 150) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
             link.classList.add('inactive');
-            if (link.getAttribute('href').slice(1) === current) {
+            const href = link.getAttribute('href');
+            if (href && href.slice(1) === current) {
                 link.classList.remove('inactive');
+            }
+        });
+
+        mobileDrawerLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href && href.slice(1) === current) {
+                link.classList.add('active');
             }
         });
     });

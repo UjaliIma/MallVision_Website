@@ -120,12 +120,12 @@ h1, h2, h3, h4, h5, h6 {
   .md\:flex-row { flex-direction: row; }
 }
 @media (min-width: 1024px) {
-  .lg\:flex { display: flex; }
-  .lg\:flex-row { flex-direction: row; }
-  .lg\:hidden { display: none; }
-  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } 
-  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } 
-  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } 
+  .lg\:flex { display: flex !important; }
+  .lg\:flex-row { flex-direction: row !important; }
+  .lg\:hidden { display: none !important; }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } 
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; } 
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; } 
 }
 @media (min-width: 1280px) { .xl\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } .xl\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
 
@@ -270,6 +270,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 0;
 }
 
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+}
+
 .navbar.scrolled {
   background-color: rgba(10, 31, 68, 0.85);
   backdrop-filter: blur(12px);
@@ -288,7 +294,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.35rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
   align-items: center;
   gap: 0.25rem;
 }
@@ -324,6 +329,77 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link.inactive:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Menu Drawer Styles */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(5, 16, 33, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden by default */
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background-color: white;
+  background-image: linear-gradient(180deg, white 0%, var(--color-slate-50) 100%);
+  z-index: 1001;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-drawer.active {
+  right: 0;
+}
+
+.mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.125rem 2rem;
+  color: var(--color-slate-500);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-right: 3px solid transparent;
+}
+
+.mobile-drawer-link i {
+  color: var(--color-slate-400);
+  transition: color 0.3s ease;
+}
+
+.mobile-drawer-link:hover,
+.mobile-drawer-link.active {
+  color: var(--color-primary);
+  background-color: rgba(0, 229, 255, 0.03);
+  border-right: 3px solid var(--color-accent);
+}
+
+.mobile-drawer-link:hover i,
+.mobile-drawer-link.active i {
+  color: var(--color-accent);
+}
+
+.mobile-drawer-link.active {
+  background-color: rgba(0, 229, 255, 0.08);
 }
 
 /* Hero Buttons */
