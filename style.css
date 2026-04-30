@@ -213,10 +213,19 @@ h1, h2, h3, h4, h5, h6 {
 .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
 
 .w-full { width: 100%; }
+.max-w-md { max-width: 28rem; }
+.max-w-2xl { max-width: 42rem; }
 .max-w-3xl { max-width: 48rem; }
+.max-w-4xl { max-width: 56rem; }
 .max-w-5xl { max-width: 64rem; }
 .max-w-6xl { max-width: 72rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+.mt-16 { margin-top: 4rem; }
+.mt-20 { margin-top: 5rem; }
 .mt-auto { margin-top: auto; }
 
 .leading-relaxed { line-height: 1.625; }
@@ -245,6 +254,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .border-t { border-top-width: 1px; }
 .border-slate-200 { border-color: #e2e8f0; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
 /* Custom Components */
 .navbar {
