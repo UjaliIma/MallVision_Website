@@ -514,7 +514,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .hero-section {
-    padding-top: 11rem;
+    padding-top: 12rem;
   }
 }
 
@@ -765,7 +765,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     position: relative;
     z-index: 100;
-    margin-top: 1.5rem; /* Pushes it down to break the nav line */
+    margin-top: 0.75rem; /* Reduced to move logo up */
   }
 }
 
