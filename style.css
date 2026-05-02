@@ -823,19 +823,96 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.research-image-wrapper {
-  border-radius: 2.5rem;
-  overflow: hidden;
-  box-shadow: 0 30px 60px -12px rgba(10, 31, 68, 0.2);
-  border: 10px solid white;
-  aspect-ratio: 16 / 10;
-  transition: all var(--transition-normal);
+.research-image-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.research-image-wrapper:hover {
-  transform: scale(1.02);
-  box-shadow: 0 40px 80px -12px rgba(10, 31, 68, 0.25);
+.research-image-wrapper {
+  flex: 1.2;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(10, 31, 68, 0.15);
+  border: 6px solid white;
+  aspect-ratio: 16 / 10;
+  transition: all var(--transition-normal);
+  background: white;
+  z-index: 1;
 }
+
+.research-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kiosk-floating-card {
+  flex: 0.8;
+  aspect-ratio: 3 / 4;
+  background: white;
+  border-radius: 2rem;
+  padding: 0;
+  box-shadow: 0 40px 80px rgba(10, 31, 68, 0.25);
+  border: 8px solid white;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  overflow: hidden;
+  margin-left: -4rem; /* Stylish overlap */
+  margin-bottom: -2rem; /* Vertical stagger */
+}
+
+
+.kiosk-floating-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will zoom in and fill the card */
+  object-position: center;
+  transform: scale(1.1); /* Initial slight zoom */
+  transition: transform 0.5s ease;
+}
+
+.kiosk-floating-card:hover {
+  transform: translateY(-15px) rotate(-2deg) scale(1.02);
+  box-shadow: 0 60px 100px rgba(10, 31, 68, 0.35);
+  border-color: var(--color-accent);
+}
+
+.kiosk-floating-card:hover img {
+  transform: scale(1.2); /* Zoom in more on hover */
+}
+
+@media (max-width: 991px) {
+  .research-image-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .kiosk-floating-card {
+    margin-left: 0;
+    margin-bottom: 0;
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kiosk-floating-card {
+    width: 80%;
+  }
+}
+
+
+
+
+.research-image-wrapper:hover {
+  transform: translateY(-10px) rotate(1deg) scale(1.02);
+  box-shadow: 0 40px 80px rgba(10, 31, 68, 0.25);
+  border-color: var(--color-accent);
+  z-index: 3; /* Lift it above when hovering */
+}
+
 
 .publication-badge {
   display: inline-flex;
