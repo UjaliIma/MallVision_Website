@@ -14,14 +14,14 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <nav id="navbar" class="glass-nav fixed top-0 left-0 right-0 z-50">
         <div class="container py-2 lg:py-0">
             <div class="nav-container-centered">
                 <!-- Mobile Logo (Left on Mobile) -->
                 <div class="lg:hidden flex items-center">
-                    <a href="#" class="flex items-center gap-2">
-                        <img src="images/logo.png" alt="Logo" class="h-8 w-auto">
-                        <span class="text-white font-bold tracking-tight">MallVision</span>
+                    <a href="#" class="flex items-center gap-2 no-underline">
+                        <img src="images/logo.png" alt="Logo" class="h-9 w-auto" style="filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));">
+                        <span class="text-white font-bold tracking-tight text-xl">MallVision</span>
                     </a>
                 </div>
 
@@ -49,7 +49,7 @@
 
                 <!-- Mobile Toggle (Right on Mobile) -->
                 <div class="lg:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 p-2 bg-transparent border-none cursor-pointer">
+                    <button id="mobile-menu-btn" class="text-white p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all border-none cursor-pointer flex items-center justify-center">
                         <i data-lucide="menu" size="28"></i>
                     </button>
                 </div>
@@ -71,25 +71,25 @@
             <!-- Navigation Links -->
             <nav class="flex flex-col py-8">
                 <a href="#" class="mobile-drawer-link active">
-                    <i data-lucide="home" size="18"></i> Home
+                    <i data-lucide="home" size="20"></i> Home
                 </a>
                 <a href="#domain" class="mobile-drawer-link">
-                    <i data-lucide="globe" size="18"></i> Domain Research
+                    <i data-lucide="globe" size="20"></i> Domain
                 </a>
                 <a href="#milestones" class="mobile-drawer-link">
-                    <i data-lucide="target" size="18"></i> Milestones
+                    <i data-lucide="target" size="20"></i> Milestones
                 </a>
                 <a href="#documents" class="mobile-drawer-link">
-                    <i data-lucide="file-text" size="18"></i> Documents
+                    <i data-lucide="file-text" size="20"></i> Documents
                 </a>
                 <a href="#presentations" class="mobile-drawer-link">
-                    <i data-lucide="monitor" size="18"></i> Presentations
+                    <i data-lucide="monitor" size="20"></i> Presentations
                 </a>
                 <a href="#about-us" class="mobile-drawer-link">
-                    <i data-lucide="users" size="18"></i> About Us
+                    <i data-lucide="users" size="20"></i> About Us
                 </a>
                 <a href="#contact" class="mobile-drawer-link">
-                    <i data-lucide="mail" size="18"></i> Contact Us
+                    <i data-lucide="mail" size="20"></i> Contact
                 </a>
             </nav>
             
