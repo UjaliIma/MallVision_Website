@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .font-normal { font-weight: 400; }
 .font-medium { font-weight: 500; }
-.font-semibold { font-weight: 600; }
+.font-semibold { font-weight: 600ƒ; }
 .font-bold { font-weight: 700; }
 .font-extrabold { font-weight: 800; }
 .font-black { font-weight: 900; }
@@ -952,6 +952,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--color-slate-100);
   position: relative;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .publication-info-card {
