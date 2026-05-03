@@ -309,13 +309,13 @@ h1, h2, h3, h4, h5, h6 {
 .glass-nav {
   background-color: transparent;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
 }
 
 .glass-nav.scrolled {
   background-color: rgba(10, 31, 68, 0.85);
   backdrop-filter: blur(12px);
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -323,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar.scrolled {
   background-color: rgba(10, 31, 68, 0.85);
   backdrop-filter: blur(12px);
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -727,8 +727,8 @@ h1, h2, h3, h4, h5, h6 {
   .nav-container-centered {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    align-items: flex-start; /* Align to top to work with logo margin */
-    padding-top: 1rem;
+    align-items: center; 
+    padding-top: 0.25rem;
   }
 }
 
@@ -743,7 +743,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2.5rem;
     padding-right: 3rem;
     align-items: center;
-    height: 60px; /* Center links in a fixed height area */
+    height: 55px; /* Center links in a fixed height area */
   }
 
   .nav-links-right {
@@ -752,7 +752,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2.5rem;
     padding-left: 3rem;
     align-items: center;
-    height: 60px; /* Center links in a fixed height area */
+    height: 55px; /* Center links in a fixed height area */
   }
 }
 
@@ -765,21 +765,22 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     position: relative;
     z-index: 100;
-    margin-top: 0.75rem; /* Reduced to move logo up */
+    margin-top: 0.25rem; 
   }
 }
 
 .logo-circle {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(255, 255, 255, 0.5);
   border: 1px solid var(--color-slate-100);
-  padding: 1rem;
+  padding: 0.35rem;
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
