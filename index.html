@@ -1558,24 +1558,49 @@
     }
 
     // Active link highlighting on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
-
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         let current = '';
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
+        
+        // Find the current section
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop - 150) {
+            if (window.pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
 
+        // Mapping for sections that don't have direct navbar links to their parent nav item
+        const sectionMapping = {
+            'system': 'domain',
+            'features': 'domain',
+            'architecture': 'domain'
+        };
+
+        if (sectionMapping[current]) {
+            current = sectionMapping[current];
+        }
+
+        // Special case for Home (Hero section)
+        if (window.pageYOffset < 300) {
+            current = '';
+        }
+
         navLinks.forEach(link => {
+            link.classList.remove('active');
             link.classList.add('inactive');
             const href = link.getAttribute('href');
-            if (href && href.slice(1) === current) {
+            
+            if (href === '#' || href === '') {
+                if (current === '') {
+                    link.classList.add('active');
+                    link.classList.remove('inactive');
+                }
+            } else if (href.slice(1) === current) {
+                link.classList.add('active');
                 link.classList.remove('inactive');
             }
         });
@@ -1583,11 +1608,19 @@
         mobileDrawerLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
-            if (href && href.slice(1) === current) {
+            
+            if (href === '#' || href === '') {
+                if (current === '') {
+                    link.classList.add('active');
+                }
+            } else if (href.slice(1) === current) {
                 link.classList.add('active');
             }
         });
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on load
 </script>
 </body>
 </html>
