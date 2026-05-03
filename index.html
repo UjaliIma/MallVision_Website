@@ -14,50 +14,45 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar not-scrolled">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <a href="#" class="flex items-center gap-3" style="text-decoration: none;">
-                    <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-primary shadow-lg shadow-accent/20">
-                        <i data-lucide="eye" size="24"></i>
-                    </div>
-                    <span class="text-2xl font-extrabold text-white tracking-tight">
-                        Mall<span class="text-accent">Vision</span>
-                    </span>
-                </a>
-            </div>
+    <nav id="navbar" class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="container py-2 lg:py-0">
+            <div class="nav-container-centered">
+                <!-- Mobile Logo (Left on Mobile) -->
+                <div class="lg:hidden flex items-center">
+                    <a href="#" class="flex items-center gap-2 no-underline">
+                        <img src="images/logo1.png" alt="Logo" class="h-9 w-auto" style="filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));">
+                        <span class="text-white font-bold tracking-tight text-xl">MallVision</span>
+                    </a>
+                </div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex nav-menu-container">
-                <a href="#" class="nav-link text-sm font-medium tracking-wide">
-                    <i data-lucide="home" size="18"></i> Home
-                </a>
-                <a href="#domain" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="globe" size="18"></i> Domain
-                </a>
-                <a href="#milestones" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="target" size="18"></i> Milestones
-                </a>
-                <a href="#documents" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="file-text" size="18"></i> Documents
-                </a>
-                <a href="#presentations" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="monitor" size="18"></i> Presentations
-                </a>
-                <a href="#about-us" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="users" size="18"></i> About Us
-                </a>
-                <a href="#contact" class="nav-link inactive text-sm font-medium tracking-wide">
-                    <i data-lucide="mail" size="18"></i> Contact
-                </a>
-            </div>
+                <!-- Left Links (Desktop) -->
+                <div class="nav-links-left hidden lg:flex">
+                    <a href="#" class="nav-link active text-sm font-medium tracking-wide">Home</a>
+                    <a href="#domain" class="nav-link inactive text-sm font-medium tracking-wide">Domain</a>
+                    <a href="#milestones" class="nav-link inactive text-sm font-medium tracking-wide">Milestones</a>
+                    <a href="#documents" class="nav-link inactive text-sm font-medium tracking-wide">Documents</a>
+                </div>
 
-            <!-- Right side / Mobile toggle -->
-            <div class="flex justify-end lg:w-1/4">
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors bg-transparent border-none cursor-pointer">
-                    <i data-lucide="menu" size="28"></i>
-                </button>
+                <!-- Center Floating Logo -->
+                <div class="floating-logo-wrapper">
+                    <a href="#" class="logo-circle">
+                        <img src="images/logo1.png" alt="MallVision Logo">
+                    </a>
+                </div>
+
+                <!-- Right Links (Desktop) -->
+                <div class="nav-links-right hidden lg:flex">
+                    <a href="#presentations" class="nav-link inactive text-sm font-medium tracking-wide">Presentations</a>
+                    <a href="#about-us" class="nav-link inactive text-sm font-medium tracking-wide">About Us</a>
+                    <a href="#contact" class="nav-link inactive text-sm font-medium tracking-wide">Contact</a>
+                </div>
+
+                <!-- Mobile Toggle (Right on Mobile) -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-white p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all border-none cursor-pointer flex items-center justify-center">
+                        <i data-lucide="menu" size="28"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -67,13 +62,7 @@
     <div id="mobile-menu-drawer" class="mobile-menu-drawer">
         <div class="flex flex-col h-full">
             <!-- Drawer Header -->
-            <div class="flex justify-between items-center px-8 py-5 border-b border-slate-100">
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-primary shadow-sm">
-                        <i data-lucide="eye" size="20"></i>
-                    </div>
-                    <span class="text-xl font-bold text-primary tracking-tight">Mall<span class="text-accent">Vision</span></span>
-                </div>
+            <div class="flex justify-end items-center px-8 py-5 border-b border-slate-100">
                 <button id="close-menu" class="text-slate-400 hover:text-primary transition-colors p-2 bg-transparent border-none cursor-pointer">
                     <i data-lucide="x" size="24"></i>
                 </button>
@@ -82,48 +71,28 @@
             <!-- Navigation Links -->
             <nav class="flex flex-col py-8">
                 <a href="#" class="mobile-drawer-link active">
-                    <i data-lucide="home" size="18"></i> Home
+                    <i data-lucide="home" size="20"></i> Home
                 </a>
                 <a href="#domain" class="mobile-drawer-link">
-                    <i data-lucide="globe" size="18"></i> Domain Research
+                    <i data-lucide="globe" size="20"></i> Domain
                 </a>
                 <a href="#milestones" class="mobile-drawer-link">
-                    <i data-lucide="target" size="18"></i> Milestones
+                    <i data-lucide="target" size="20"></i> Milestones
                 </a>
                 <a href="#documents" class="mobile-drawer-link">
-                    <i data-lucide="file-text" size="18"></i> Documents
+                    <i data-lucide="file-text" size="20"></i> Documents
                 </a>
                 <a href="#presentations" class="mobile-drawer-link">
-                    <i data-lucide="monitor" size="18"></i> Presentations
+                    <i data-lucide="monitor" size="20"></i> Presentations
                 </a>
                 <a href="#about-us" class="mobile-drawer-link">
-                    <i data-lucide="users" size="18"></i> About Us
+                    <i data-lucide="users" size="20"></i> About Us
                 </a>
                 <a href="#contact" class="mobile-drawer-link">
-                    <i data-lucide="mail" size="18"></i> Contact Us
+                    <i data-lucide="mail" size="20"></i> Contact
                 </a>
             </nav>
             
-            <!-- Footer Area -->
-            <div class="mt-auto p-8 bg-slate-50/50 border-t border-slate-100">
-                <div class="flex flex-col gap-6">
-                    <div>
-                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Research Portal</p>
-                        <div class="flex gap-4">
-                            <a href="mailto:researchmrus@gmail.com" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all">
-                                <i data-lucide="mail" size="18"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all">
-                                <i data-lucide="linkedin" size="18"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center pt-6 border-t border-slate-100">
-                        <span class="text-slate-400 text-[10px] font-medium">© 2026 MallVision</span>
-                        <span class="text-slate-300 text-[10px] font-medium tracking-widest">V1.2.4</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -246,8 +215,13 @@
                         </div>
                     </div>
                     
-                    <div class="research-image-wrapper">
-                        <img src="images/mall.jpeg" alt="Mall Analytics Visualization" class="w-full h-full object-cover">
+                    <div class="research-image-container">
+                        <div class="research-image-wrapper">
+                            <img src="images/mall.jpeg" alt="Mall Analytics Visualization">
+                        </div>
+                        <div class="kiosk-floating-card">
+                            <img src="images/kiosk-prototype.png" alt="MallVision Kiosk Prototype">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1399,7 +1373,7 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="profile-card">
                         <div class="profile-image-container">
-                            <img src="images/Minindi.png" alt="Fonseka W S M" class="profile-image">
+                            <img src="images/Minindi1.png" alt="Fonseka W S M" class="profile-image">
                         </div>
                         <h3 class="text-lg font-bold text-primary mb-1">Fonseka W S M</h3>
                         <div class="role-badge">Undergraduate</div>
@@ -1431,7 +1405,7 @@
                     </div>
                     <div class="profile-card">
                         <div class="profile-image-container">
-                            <img src="images/Savindi.png" alt="Abeykoon S N" class="profile-image">
+                            <img src="images/Savindi2.png" alt="Abeykoon S N" class="profile-image">
                         </div>
                         <h3 class="text-lg font-bold text-primary mb-1">Abeykoon S N</h3>
                         <div class="role-badge">Undergraduate</div>
@@ -1447,7 +1421,7 @@
                     </div>
                     <div class="profile-card">
                         <div class="profile-image-container">
-                            <img src="images/Rajana.png" alt="Rajana H T R" class="profile-image">
+                            <img src="images/Rajana1.png" alt="Rajana H T R" class="profile-image">
                         </div>
                         <h3 class="text-lg font-bold text-primary mb-1">Rajana H T R</h3>
                         <div class="role-badge">Undergraduate</div>
@@ -1584,24 +1558,49 @@
     }
 
     // Active link highlighting on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
-
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         let current = '';
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
+        
+        // Find the current section
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop - 150) {
+            if (window.pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
 
+        // Mapping for sections that don't have direct navbar links to their parent nav item
+        const sectionMapping = {
+            'system': 'domain',
+            'features': 'domain',
+            'architecture': 'domain'
+        };
+
+        if (sectionMapping[current]) {
+            current = sectionMapping[current];
+        }
+
+        // Special case for Home (Hero section)
+        if (window.pageYOffset < 300) {
+            current = '';
+        }
+
         navLinks.forEach(link => {
+            link.classList.remove('active');
             link.classList.add('inactive');
             const href = link.getAttribute('href');
-            if (href && href.slice(1) === current) {
+            
+            if (href === '#' || href === '') {
+                if (current === '') {
+                    link.classList.add('active');
+                    link.classList.remove('inactive');
+                }
+            } else if (href.slice(1) === current) {
+                link.classList.add('active');
                 link.classList.remove('inactive');
             }
         });
@@ -1609,11 +1608,19 @@
         mobileDrawerLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
-            if (href && href.slice(1) === current) {
+            
+            if (href === '#' || href === '') {
+                if (current === '') {
+                    link.classList.add('active');
+                }
+            } else if (href.slice(1) === current) {
                 link.classList.add('active');
             }
         });
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on load
 </script>
 </body>
 </html>
